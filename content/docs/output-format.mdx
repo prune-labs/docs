@@ -12,16 +12,16 @@ Prune supports three output formats, selected via `--format` on the CLI or `repo
 
 Every finding has the following fields, regardless of format:
 
-| Field | Type | Description |
-|---|---|---|
-| `id` | string | Unique identifier for the finding. Format: `<kind>:<file>:<symbol>` |
-| `kind` | string | Rule that produced the finding (e.g., `unused_file`, `unused_export`) |
-| `confidence` | string | Confidence level: `safe`, `likely_dead`, or `review` |
-| `file` | string | Relative path to the file containing the finding. Empty string for file-independent findings |
-| `line` | int | Line number where the symbol is declared. `1` when the exact line is unavailable |
-| `symbol` | string | Name of the affected symbol or file basename |
-| `reason` | string | Human-readable explanation of why the finding was emitted |
-| `evidence` | object | Optional additional context (reserved; currently omitted from output) |
+| Field        | Type   | Description                                                                                  |
+| ------------ | ------ | -------------------------------------------------------------------------------------------- |
+| `id`         | string | Unique identifier for the finding. Format: `<kind>:<file>:<symbol>`                          |
+| `kind`       | string | Rule that produced the finding (e.g., `unused_file`, `unused_export`)                        |
+| `confidence` | string | Confidence level: `safe`, `likely_dead`, or `review`                                         |
+| `file`       | string | Relative path to the file containing the finding. Empty string for file-independent findings |
+| `line`       | int    | Line number where the symbol is declared. `1` when the exact line is unavailable             |
+| `symbol`     | string | Name of the affected symbol or file basename                                                 |
+| `reason`     | string | Human-readable explanation of why the finding was emitted                                    |
+| `evidence`   | object | Optional additional context (reserved; currently omitted from output)                        |
 
 ---
 
@@ -151,19 +151,19 @@ prune scan --format json
 
 ### Summary Fields
 
-| Field | Type | Description |
-|---|---|---|
-| `files` | int | Unique file count with findings |
-| `issues` | int | Total number of findings |
-| `safe` | int | Findings with `confidence: "safe"` |
-| `review` | int | Findings with `confidence: "review"` or `"likely_dead"` |
+| Field    | Type | Description                                             |
+| -------- | ---- | ------------------------------------------------------- |
+| `files`  | int  | Unique file count with findings                         |
+| `issues` | int  | Total number of findings                                |
+| `safe`   | int  | Findings with `confidence: "safe"`                      |
+| `review` | int  | Findings with `confidence: "review"` or `"likely_dead"` |
 
 ### Metadata Fields
 
-| Field | Type | Description |
-|---|---|---|
-| `entrypoints` | string[] | Entrypoint files and patterns from config |
-| `scan_time_ms` | int | Scan duration in milliseconds |
+| Field          | Type     | Description                               |
+| -------------- | -------- | ----------------------------------------- |
+| `entrypoints`  | string[] | Entrypoint files and patterns from config |
+| `scan_time_ms` | int      | Scan duration in milliseconds             |
 
 When no findings match the filter, an empty findings array is returned:
 
@@ -208,11 +208,11 @@ prune scan --format ndjson | jq 'select(.confidence == "safe") | .file'
 
 Regardless of format, findings below the `--min-confidence` threshold are excluded before output. The confidence ranking is:
 
-| Level | Rank |
-|---|---|
-| `safe` | 1 (lowest — most confident) |
-| `likely_dead` | 2 |
-| `review` | 3 (highest — least certain) |
+| Level         | Rank                        |
+| ------------- | --------------------------- |
+| `safe`        | 1 (lowest — most confident) |
+| `likely_dead` | 2                           |
+| `review`      | 3 (highest — least certain) |
 
 `--min-confidence safe` (the default) includes all findings.  
 `--min-confidence likely_dead` excludes `safe`-level findings.  
@@ -275,5 +275,6 @@ prune scan --deletable
 When combined with `--min-confidence`, this filters to only `safe`-level deletable files.
 
 <Callout type="warn">
-The ranking is counter-intuitive: `safe` findings are the most certain candidates for deletion, but have the lowest rank. A higher `--min-confidence` value means more uncertain findings.
+  The ranking is counter-intuitive: `safe` findings are the most certain candidates for deletion,
+  but have the lowest rank. A higher `--min-confidence` value means more uncertain findings.
 </Callout>

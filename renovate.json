@@ -1,0 +1,17 @@
+{
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:recommended"],
+  "labels": ["dependencies"],
+  "prHourlyLimit": 2,
+  "prConcurrentLimit": 5,
+  "rangeStrategy": "bump",
+  "semanticCommits": "enabled",
+  "packageRules": [
+    {
+      "matchManagers": ["npm", "bun"],
+      "matchFileNames": ["docs/**"],
+      "groupName": "docs JS dependencies",
+      "automerge": false
+    }
+  ]
+}

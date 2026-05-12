@@ -1,13 +1,13 @@
-import type { MetadataRoute } from 'next';
-import { source } from '@/lib/source';
+import type { MetadataRoute } from "next";
+import { source } from "@/lib/source";
 
-const BASE_URL = 'https://prune-rose.vercel.app';
+const BASE_URL = "https://prune-rose.vercel.app";
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const docPages = source.getPages().map((page) => ({
-    url: `${BASE_URL}/docs/${page.slugs.join('/')}`,
+    url: `${BASE_URL}/docs/${page.slugs.join("/")}`,
     lastModified: new Date(),
-    changeFrequency: 'weekly' as const,
+    changeFrequency: "weekly" as const,
     priority: 0.8,
   }));
 
@@ -15,13 +15,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
     {
       url: BASE_URL,
       lastModified: new Date(),
-      changeFrequency: 'monthly',
+      changeFrequency: "monthly",
       priority: 1.0,
     },
     {
       url: `${BASE_URL}/docs`,
       lastModified: new Date(),
-      changeFrequency: 'weekly',
+      changeFrequency: "weekly",
       priority: 0.9,
     },
     ...docPages,

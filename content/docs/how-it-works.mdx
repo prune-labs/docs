@@ -46,11 +46,11 @@ The `Collector` reads each file and builds a shared `Collected` structure for ru
 
 Prune uses Tree-sitter grammars by extension:
 
-| Extension | Grammar |
-|---|---|
+| Extension     | Grammar    |
+| ------------- | ---------- |
 | `.js`, `.jsx` | JavaScript |
-| `.ts` | TypeScript |
-| `.tsx` | TSX |
+| `.ts`         | TypeScript |
+| `.tsx`        | TSX        |
 
 If parsing fails for a file, Prune falls back to regex extraction so analysis still proceeds.
 
@@ -114,11 +114,11 @@ Emits findings for dynamic APIs/patterns configured in `rules.suspicious_dynamic
 
 All findings are assigned one of:
 
-| Level | Meaning |
-|---|---|
-| `safe` | High certainty dead code candidate |
-| `likely_dead` | Likely dead, verify before deletion |
-| `review` | Low certainty due to dynamic/entrypoint ambiguity |
+| Level         | Meaning                                           |
+| ------------- | ------------------------------------------------- |
+| `safe`        | High certainty dead code candidate                |
+| `likely_dead` | Likely dead, verify before deletion               |
+| `review`      | Low certainty due to dynamic/entrypoint ambiguity |
 
 ---
 

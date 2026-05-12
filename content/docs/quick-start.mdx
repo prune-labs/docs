@@ -64,10 +64,10 @@ Open `prune.yaml` and update `entrypoints.files` and `entrypoints.patterns` to m
 ```yaml
 entrypoints:
   files:
-    - src/index.ts   # main application entry
+    - src/index.ts # main application entry
   patterns:
-    - src/pages/**   # Next.js page files (each is an entry)
-    - src/routes/**  # React Router route files
+    - src/pages/** # Next.js page files (each is an entry)
+    - src/routes/** # React Router route files
 ```
 
 ## Step 3 — Run a scan
@@ -141,5 +141,6 @@ prune scan --min-confidence likely_dead
 The three confidence levels are ordered: `safe` < `likely_dead` < `review`. Passing `--min-confidence safe` shows everything at or above `safe` (i.e., all findings).
 
 <Callout type="info">
-The `--min-confidence` flag filters which findings are printed. It does not affect what Prune analyzes.
+  The `--min-confidence` flag filters which findings are printed. It does not affect what Prune
+  analyzes.
 </Callout>

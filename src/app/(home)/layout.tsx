@@ -1,56 +1,56 @@
-import type { Metadata } from 'next';
-import Script from 'next/script';
+import type { Metadata } from "next";
+import Script from "next/script";
 
-const BASE_URL = 'https://prune-rose.vercel.app';
+const BASE_URL = "https://prune-rose.vercel.app";
 
 export const metadata: Metadata = {
   metadataBase: new URL(BASE_URL),
   title: {
-    default: 'Prune — Dead Code Analyzer for JavaScript & TypeScript',
-    template: '%s | Prune',
+    default: "Prune — Dead Code Analyzer for JavaScript & TypeScript",
+    template: "%s | Prune",
   },
   description:
-    'Prune is a static analysis CLI tool that finds unreachable code, orphaned files, and unused exports in JavaScript and TypeScript projects. Powered by Tree-sitter. Built for CI/CD.',
+    "Prune is a static analysis CLI tool that finds unreachable code, orphaned files, and unused exports in JavaScript and TypeScript projects. Powered by Tree-sitter. Built for CI/CD.",
   keywords: [
-    'dead code',
-    'static analysis',
-    'JavaScript',
-    'TypeScript',
-    'unused exports',
-    'orphaned files',
-    'tree-sitter',
-    'CLI',
-    'CI/CD',
-    'code quality',
-    'linter',
-    'code pruning',
+    "dead code",
+    "static analysis",
+    "JavaScript",
+    "TypeScript",
+    "unused exports",
+    "orphaned files",
+    "tree-sitter",
+    "CLI",
+    "CI/CD",
+    "code quality",
+    "linter",
+    "code pruning",
   ],
-  authors: [{ name: 'Carlos Eduardo', url: 'https://github.com/carlosedujs' }],
-  creator: 'Carlos Eduardo',
+  authors: [{ name: "Carlos Eduardo", url: "https://github.com/carlosedujs" }],
+  creator: "Carlos Eduardo",
   openGraph: {
-    type: 'website',
-    locale: 'en_US',
+    type: "website",
+    locale: "en_US",
     url: BASE_URL,
-    siteName: 'Prune',
-    title: 'Prune — Dead Code Analyzer for JavaScript & TypeScript',
+    siteName: "Prune",
+    title: "Prune — Dead Code Analyzer for JavaScript & TypeScript",
     description:
-      'Find and remove unreachable code, orphaned files, and unused exports in JS/TS projects. Works on any OS. Fits right into your CI.',
+      "Find and remove unreachable code, orphaned files, and unused exports in JS/TS projects. Works on any OS. Fits right into your CI.",
     images: [
       {
-        url: '/og/home/image.webp',
+        url: "/og/home/image.webp",
         width: 1200,
         height: 630,
-        alt: 'Prune — Dead Code Analyzer for JS/TS',
+        alt: "Prune — Dead Code Analyzer for JS/TS",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'Prune — Dead Code Analyzer for JavaScript & TypeScript',
+    card: "summary_large_image",
+    title: "Prune — Dead Code Analyzer for JavaScript & TypeScript",
     description:
-      'Find and remove unreachable code, orphaned files, and unused exports in JS/TS projects.',
-    images: ['/og/home/image.webp'],
-    creator: '@carlosedujs',
+      "Find and remove unreachable code, orphaned files, and unused exports in JS/TS projects.",
+    images: ["/og/home/image.webp"],
+    creator: "@carlosedujs",
   },
   robots: {
     index: true,
@@ -58,42 +58,42 @@ export const metadata: Metadata = {
     googleBot: {
       index: true,
       follow: true,
-      'max-video-preview': -1,
-      'max-image-preview': 'large',
-      'max-snippet': -1,
+      "max-video-preview": -1,
+      "max-image-preview": "large",
+      "max-snippet": -1,
     },
   },
   alternates: {
     canonical: BASE_URL,
   },
   verification: {
-    google: 'Bco0meN-73Wimh1fOAJS4gtnEdGqooYR5zKQOfH0CkU',
+    google: "Bco0meN-73Wimh1fOAJS4gtnEdGqooYR5zKQOfH0CkU",
   },
 };
 
 const jsonLd = {
-  '@context': 'https://schema.org',
-  '@type': 'SoftwareApplication',
-  name: 'Prune',
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Prune",
   description:
-    'A static analysis CLI tool that identifies dead code — unreachable files, unused exports, unused functions, and unused variables — in JavaScript and TypeScript projects using Tree-sitter AST parsing.',
-  applicationCategory: 'DeveloperApplication',
-  operatingSystem: 'Linux, macOS, Windows',
+    "A static analysis CLI tool that identifies dead code — unreachable files, unused exports, unused functions, and unused variables — in JavaScript and TypeScript projects using Tree-sitter AST parsing.",
+  applicationCategory: "DeveloperApplication",
+  operatingSystem: "Linux, macOS, Windows",
   url: BASE_URL,
-  softwareVersion: '0.4.0-beta.1',
-  license: 'https://opensource.org/licenses/MIT',
+  softwareVersion: "0.4.0-beta.1",
+  license: "https://opensource.org/licenses/MIT",
   author: {
-    '@type': 'Person',
-    name: 'Carlos Eduardo',
-    url: 'https://github.com/carlosedujs',
+    "@type": "Person",
+    name: "Carlos Eduardo",
+    url: "https://github.com/carlosedujs",
   },
-  codeRepository: 'https://github.com/carlosedujs/prune',
-  programmingLanguage: 'Go',
-  keywords: 'dead code, static analysis, JavaScript, TypeScript, CLI, tree-sitter',
+  codeRepository: "https://github.com/carlosedujs/prune",
+  programmingLanguage: "Go",
+  keywords: "dead code, static analysis, JavaScript, TypeScript, CLI, tree-sitter",
   offers: {
-    '@type': 'Offer',
-    price: '0',
-    priceCurrency: 'USD',
+    "@type": "Offer",
+    price: "0",
+    priceCurrency: "USD",
   },
 };
 

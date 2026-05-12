@@ -44,8 +44,8 @@ prune init
 
 **Flags:**
 
-| Flag | Type | Default | Description |
-|---|---|---|---|
+| Flag    | Type   | Default      | Description                                      |
+| ------- | ------ | ------------ | ------------------------------------------------ |
 | `--out` | string | `prune.yaml` | Output path for the generated configuration file |
 
 **Example — write config to a custom path:**
@@ -74,19 +74,19 @@ prune scan [flags]
 
 **Flags:**
 
-| Flag | Type | Default | Description |
-|---|---|---|---|
-| `--config` | string | `prune.yaml` | Path to the Prune configuration file |
-| `--format` | string | `pretty` | Output format: `pretty`, `json`, `ndjson`, or `table` (alias for `pretty`) |
-| `--min-confidence` | string | `safe` | Minimum confidence level to include in output: `safe`, `likely_dead`, or `review` |
-| `--paths` | string (repeatable) | _(from config)_ | Override scan paths. Can be specified multiple times |
-| `--fail-on-findings` | bool | `false` | Exit with a non-zero status code if any findings match the confidence filter |
-| `--stream` | bool | `false` | Enable streaming mode — emit findings incrementally as files are processed |
-| `--stream-interval` | int | `250` | Interval in milliseconds between streaming flushes |
-| `--stream-batch-size` | int | `50` | Number of files processed per streaming batch |
-| `--compact` | bool | `false` | Show only summary counts, without individual findings |
-| `--only` | string | `""` | Show only findings with this confidence level: `safe`, `review`, or `likely_dead` |
-| `--deletable` | bool | `false` | Show only files that are safe to delete (no living imports) |
+| Flag                  | Type                | Default         | Description                                                                       |
+| --------------------- | ------------------- | --------------- | --------------------------------------------------------------------------------- |
+| `--config`            | string              | `prune.yaml`    | Path to the Prune configuration file                                              |
+| `--format`            | string              | `pretty`        | Output format: `pretty`, `json`, `ndjson`, or `table` (alias for `pretty`)        |
+| `--min-confidence`    | string              | `safe`          | Minimum confidence level to include in output: `safe`, `likely_dead`, or `review` |
+| `--paths`             | string (repeatable) | _(from config)_ | Override scan paths. Can be specified multiple times                              |
+| `--fail-on-findings`  | bool                | `false`         | Exit with a non-zero status code if any findings match the confidence filter      |
+| `--stream`            | bool                | `false`         | Enable streaming mode — emit findings incrementally as files are processed        |
+| `--stream-interval`   | int                 | `250`           | Interval in milliseconds between streaming flushes                                |
+| `--stream-batch-size` | int                 | `50`            | Number of files processed per streaming batch                                     |
+| `--compact`           | bool                | `false`         | Show only summary counts, without individual findings                             |
+| `--only`              | string              | `""`            | Show only findings with this confidence level: `safe`, `review`, or `likely_dead` |
+| `--deletable`         | bool                | `false`         | Show only files that are safe to delete (no living imports)                       |
 
 **Examples:**
 
@@ -171,12 +171,13 @@ prune --help
 
 ## Exit Codes
 
-| Code | Condition |
-|---|---|
-| `0` | Command completed successfully. In `scan`, this means no error occurred — findings may still be present. |
-| `1` | An error occurred (unrecognized command, config load failure, I/O error, etc.) |
-| `1` | `--fail-on-findings` is set and at least one finding passes the `--min-confidence` filter |
+| Code | Condition                                                                                                |
+| ---- | -------------------------------------------------------------------------------------------------------- |
+| `0`  | Command completed successfully. In `scan`, this means no error occurred — findings may still be present. |
+| `1`  | An error occurred (unrecognized command, config load failure, I/O error, etc.)                           |
+| `1`  | `--fail-on-findings` is set and at least one finding passes the `--min-confidence` filter                |
 
 <Callout type="info">
-The `scan` command exits `0` even if there are findings, unless `--fail-on-findings` is explicitly set. This makes it safe to use in report-only mode without affecting pipeline status.
+  The `scan` command exits `0` even if there are findings, unless `--fail-on-findings` is explicitly
+  set. This makes it safe to use in report-only mode without affecting pipeline status.
 </Callout>
