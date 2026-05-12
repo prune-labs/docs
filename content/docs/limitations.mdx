@@ -27,7 +27,7 @@ const module = await import(`./components/${name}`);
 or
 
 ```js
-const mod = require('./handlers/' + handlerName);
+const mod = require("./handlers/" + handlerName);
 ```
 
 Prune has no way to determine which files are actually loaded at runtime. Files referenced only through such expressions will appear as `unused_file` findings.
@@ -39,8 +39,8 @@ Prune has no way to determine which files are actually loaded at runtime. Files 
 Only **relative imports** (starting with `./` or `../`) and **configured aliases** are resolved to files in the project. Non-relative imports are treated as external packages and skipped from the dependency graph.
 
 ```ts
-import React from 'react';              // skipped — external package
-import { bar } from './local-module';   // resolved — analyzed
+import React from "react"; // skipped — external package
+import { bar } from "./local-module"; // resolved — analyzed
 ```
 
 Path aliases (e.g., `@/`, `~/`) are resolved when configured:
@@ -59,6 +59,7 @@ Aliases not configured in `ts_config` are treated as external and skipped.
 ### Alias Resolution Edge Cases
 
 // [!code highlight]
+
 - **Scoped patterns** like `@scope/*` are supported when configured in `ts_config.paths`
 - **Longest-prefix matching** is used when multiple aliases can match the same import
 - **Complex wildcard patterns** like `@utils/*/helper` are not fully supported (Prune expects exact aliases or `/*` suffix patterns)
@@ -71,7 +72,7 @@ Aliases not configured in `ts_config` are treated as external and skipped.
 Prune tracks re-exports at the import spec level, but reachability from a barrel file is limited. If `src/index.ts` re-exports from `src/components/Button.ts`:
 
 ```ts
-export { Button } from './components/Button';
+export { Button } from "./components/Button";
 ```
 
 Prune registers `./components/Button` as an import of `src/index.ts`, and `Button` is marked as potentially used from that file. However, if `Button` is imported by a consumer that **only** imports from the barrel (`import { Button } from '../index'`), the link from the barrel's re-export to the original file is tracked only if Prune successfully resolves the re-export source path.
@@ -113,9 +114,9 @@ Prune does not automatically exclude test files. If you do not want test files i
 ```yaml
 scan:
   exclude:
-    - '**/*.test.ts'
-    - '**/*.spec.ts'
-    - '**/__tests__/**'
+    - "**/*.test.ts"
+    - "**/*.spec.ts"
+    - "**/__tests__/**"
 ```
 
 Otherwise, symbols referenced only from tests will appear as unused in production code, and test-only files may not appear as `unused_file` if they are imported by other test files.

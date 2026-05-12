@@ -6,7 +6,9 @@ import { Download, Star, BookOpen, Heart } from "lucide-react";
 export default function CallToAction() {
   return (
     <Section className="flex-col gap-10 max-w-4xl mx-auto py-20 sm:py-32 items-center text-center">
-      <h2 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight px-4 sm:px-0">Find what you can delete in 60 seconds</h2>
+      <h2 className="text-4xl sm:text-5xl font-bold tracking-tight leading-tight px-4 sm:px-0">
+        Find what you can delete in 60 seconds
+      </h2>
       <p className="text-xl sm:text-2xl text-muted-foreground max-w-2xl px-4 sm:px-0">
         Install Prune and see how much code you can remove today.
       </p>

@@ -33,10 +33,10 @@ export default function Footer() {
     <footer className="bg-foreground w-full text-background flex flex-col md:flex-row items-center md:items-baseline justify-between p-12 rounded-t-xl mt-12 sm:mt-24">
       <h1 className="text-8xl sm:text-9xl font-bold">prune</h1>
       <div className="h-8 mt-6 md:mt-0 flex items-center">
-        <p 
+        <p
           className={cn(
             "text-xl font-bold text-muted text-center md:text-right transition-opacity duration-500",
-            fade ? "opacity-100" : "opacity-0"
+            fade ? "opacity-100" : "opacity-0",
           )}
         >
           {PHRASES[index]}

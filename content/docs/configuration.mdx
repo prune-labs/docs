@@ -30,10 +30,10 @@ scan:
   paths:
     - src
   include:
-    - '**/*.ts'
-    - '**/*.tsx'
-    - '**/*.js'
-    - '**/*.jsx'
+    - "**/*.ts"
+    - "**/*.tsx"
+    - "**/*.js"
+    - "**/*.jsx"
   exclude:
     - node_modules/**
     - dist/**
@@ -67,7 +67,7 @@ rules:
     high_risk_patterns:
       - eval
       - Function
-      - 'import('
+      - "import("
     safe_patterns:
       - window
       - document
@@ -89,7 +89,7 @@ rules:
     high_risk_patterns:
       - eval
       - Function
-      - 'import('
+      - "import("
     safe_patterns:
       - window
       - document
@@ -124,7 +124,7 @@ rules:
       - eval
       - Function
       - require
-      - 'import('
+      - "import("
     confidence:
       default: review
 
@@ -283,13 +283,13 @@ Each rule can be enabled/disabled and configured with confidence overrides.
 
 #### Rule fields
 
-| Field | Type | Description |
-|---|---|---|
-| `enabled` | bool | Whether the rule runs (default: `true`) |
-| `confidence` | map | Maps confidence keys to levels (`safe`, `likely_dead`, `review`) |
-| `patterns` | list of strings | Pattern list for supported rules (for example `suspicious_dynamic_usage`) |
-| `high_risk_patterns` | list of strings | Dynamic patterns that downgrade confidence in `unused_*` rules |
-| `safe_patterns` | list of strings | Dynamic patterns considered safe context in `unused_*` rules |
+| Field                | Type            | Description                                                               |
+| -------------------- | --------------- | ------------------------------------------------------------------------- |
+| `enabled`            | bool            | Whether the rule runs (default: `true`)                                   |
+| `confidence`         | map             | Maps confidence keys to levels (`safe`, `likely_dead`, `review`)          |
+| `patterns`           | list of strings | Pattern list for supported rules (for example `suspicious_dynamic_usage`) |
+| `high_risk_patterns` | list of strings | Dynamic patterns that downgrade confidence in `unused_*` rules            |
+| `safe_patterns`      | list of strings | Dynamic patterns considered safe context in `unused_*` rules              |
 
 #### `rules.unused_function`
 
@@ -372,7 +372,7 @@ rules:
       - eval
       - Function
       - require
-      - 'import('
+      - "import("
     confidence:
       default: review
 ```

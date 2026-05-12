@@ -1,6 +1,6 @@
-@import 'tailwindcss';
-@import 'fumadocs-ui/css/shadcn.css';
-@import 'fumadocs-ui/css/preset.css';
+@import "tailwindcss";
+@import "fumadocs-ui/css/shadcn.css";
+@import "fumadocs-ui/css/preset.css";
 @import "tw-animate-css";
 @import "shadcn/tailwind.css";
 
@@ -163,15 +163,19 @@ html > body[data-scroll-locked] {
     letter-spacing: -0.015em;
     font-weight: 600;
   }
-  h4, h5, h6 {
+  h4,
+  h5,
+  h6 {
     font-family: var(--font-heading);
     letter-spacing: -0.01em;
   }
-  body, p {
+  body,
+  p {
     font-family: var(--font-body);
     line-height: 1.6;
   }
-  code, pre {
+  code,
+  pre {
     font-family: var(--font-mono);
   }
 }

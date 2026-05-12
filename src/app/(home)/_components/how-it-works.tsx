@@ -11,20 +11,20 @@ export default function HowItWorks() {
         {[
           {
             title: "Define Entrypoints",
-            desc: "Tell Prune where your app starts (e.g., src/index.ts, app/page.tsx)."
+            desc: "Tell Prune where your app starts (e.g., src/index.ts, app/page.tsx).",
           },
           {
             title: "Graph Traversal",
-            desc: "Prune parses your files into ASTs and traces every import, export, and call-site."
+            desc: "Prune parses your files into ASTs and traces every import, export, and call-site.",
           },
           {
             title: "Reachability Analysis",
-            desc: "Anything not connected to your entrypoints is flagged."
+            desc: "Anything not connected to your entrypoints is flagged.",
           },
           {
             title: "Actionable Results",
-            desc: "Get a clear list of what can be safely removed or reviewed."
-          }
+            desc: "Get a clear list of what can be safely removed or reviewed.",
+          },
         ].map((item, i) => (
           <div key={i} className="flex flex-col sm:flex-row gap-4 sm:gap-8 items-start">
             <div className="flex items-center justify-center min-w-10 min-h-10 sm:min-w-12 sm:min-h-12 rounded-full border border-border bg-muted text-foreground font-semibold text-lg sm:text-xl">
@@ -39,7 +39,9 @@ export default function HowItWorks() {
       </div>
       <div className="pt-8 border-t border-border mt-6 flex flex-col sm:flex-row items-center sm:items-start gap-4 text-center sm:text-left">
         <CheckCircle2 className="text-muted-foreground shrink-0 hidden sm:block" />
-        <p className="text-lg sm:text-xl font-medium tracking-tight">Run it locally or in CI — same behavior, same results.</p>
+        <p className="text-lg sm:text-xl font-medium tracking-tight">
+          Run it locally or in CI — same behavior, same results.
+        </p>
       </div>
     </Section>
   );

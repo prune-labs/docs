@@ -56,7 +56,7 @@ jobs:
       - name: Set up Go
         uses: actions/setup-go@v5
         with:
-          go-version: '1.24'
+          go-version: "1.24"
 
       - name: Install Prune
         run: go install github.com/carlosedujs/prune/cmd/prune@latest
@@ -114,7 +114,8 @@ fi
 ```
 
 <Callout type="info">
-The new JSON format wraps findings in a root object with `summary` and `metadata`. Update any jq filters to access `.findings` first.
+  The new JSON format wraps findings in a root object with `summary` and `metadata`. Update any jq
+  filters to access `.findings` first.
 </Callout>
 
 ```bash
@@ -131,6 +132,7 @@ if [ "$COUNT" -gt 10 ]; then
   exit 1
 fi
 ```
+
 // [!code focus]
 
 ---
@@ -146,7 +148,9 @@ prune scan --stream --format ndjson
 Each finding is printed to stdout as it is discovered. This is useful when the full scan takes several seconds and you want early visibility in logs.
 
 <Callout type="info">
-Streaming mode processes files in batches controlled by `--stream-batch-size` (default: `50`) and emitted every `--stream-interval` milliseconds (default: `250`). Results from streaming mode may appear in a different order than standard mode.
+  Streaming mode processes files in batches controlled by `--stream-batch-size` (default: `50`) and
+  emitted every `--stream-interval` milliseconds (default: `250`). Results from streaming mode may
+  appear in a different order than standard mode.
 </Callout>
 
 ---
